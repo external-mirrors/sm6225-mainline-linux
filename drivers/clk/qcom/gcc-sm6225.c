@@ -3325,6 +3325,17 @@ static const struct qcom_reset_map gcc_sm6225_resets[] = {
 	[GCC_VIDEO_INTERFACE_BCR] = { 0x6e000 },
 };
 
+static struct gdsc *gcc_sm6225_gdscs[] = {
+	[GCC_CAMSS_TOP_GDSC] = &gcc_camss_top_gdsc,
+	[GCC_UFS_PHY_GDSC] = &gcc_ufs_phy_gdsc,
+	[GCC_USB30_PRIM_GDSC] = &gcc_usb30_prim_gdsc,
+	[GCC_VCODEC0_GDSC] = &gcc_vcodec0_gdsc,
+	[GCC_VENUS_GDSC] = &gcc_venus_gdsc,
+	[HLOS1_VOTE_TURING_MMU_TBU1_GDSC] = &hlos1_vote_turing_mmu_tbu1_gdsc,
+	[HLOS1_VOTE_TURING_MMU_TBU0_GDSC] = &hlos1_vote_turing_mmu_tbu0_gdsc,
+	[HLOS1_VOTE_MM_SNOC_MMU_TBU_RT_GDSC] = &hlos1_vote_mm_snoc_mmu_tbu_rt_gdsc,
+	[HLOS1_VOTE_MM_SNOC_MMU_TBU_NRT_GDSC] = &hlos1_vote_mm_snoc_mmu_tbu_nrt_gdsc,
+};
 
 static const struct clk_rcg_dfs_data gcc_dfs_clocks[] = {
 	DEFINE_RCG_DFS(gcc_qupv3_wrap0_s0_clk_src),
@@ -3349,6 +3360,8 @@ static const struct qcom_cc_desc gcc_sm6225_desc = {
 	.num_clks = ARRAY_SIZE(gcc_sm6225_clocks),
 	.resets = gcc_sm6225_resets,
 	.num_resets = ARRAY_SIZE(gcc_sm6225_resets),
+	.gdscs = gcc_sm6225_gdscs,
+	.num_gdscs = ARRAY_SIZE(gcc_sm6225_gdscs),
 };
 
 static const struct of_device_id gcc_sm6225_match_table[] = {
