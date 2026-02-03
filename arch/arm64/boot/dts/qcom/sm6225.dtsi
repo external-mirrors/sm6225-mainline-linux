@@ -225,6 +225,65 @@
 			clock-frequency = <19200000>;
 		};
 
+		timer@f120000 {
+			#address-cells = <1>;
+			#size-cells = <1>;
+			ranges;
+			compatible = "arm,armv7-timer-mem";
+			reg = <0xf120000 0x1000>;
+			clock-frequency = <19200000>;
+
+			frame@f121000 {
+				frame-number = <0>;
+				interrupts = <IRQ_TYPE_NONE 8 IRQ_TYPE_LEVEL_HIGH>,
+						<IRQ_TYPE_NONE 7 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf121000 0x1000>,
+					<0xf122000 0x1000>;
+			};
+
+			frame@f123000 {
+				frame-number = <1>;
+				interrupts = <IRQ_TYPE_NONE 9 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf123000 0x1000>;
+				status = "disabled";
+			};
+
+			frame@f124000 {
+				frame-number = <2>;
+				interrupts = <IRQ_TYPE_NONE 10 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf124000 0x1000>;
+				status = "disabled";
+			};
+
+			frame@f125000 {
+				frame-number = <3>;
+				interrupts = <IRQ_TYPE_NONE 11 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf125000 0x1000>;
+				status = "disabled";
+			};
+
+			frame@f126000 {
+				frame-number = <4>;
+				interrupts = <IRQ_TYPE_NONE 12 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf126000 0x1000>;
+				status = "disabled";
+			};
+
+			frame@f127000 {
+				frame-number = <5>;
+				interrupts = <IRQ_TYPE_NONE 13 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf127000 0x1000>;
+				status = "disabled";
+			};
+
+			frame@f128000 {
+				frame-number = <6>;
+				interrupts = <IRQ_TYPE_NONE 14 IRQ_TYPE_LEVEL_HIGH>;
+				reg = <0xf128000 0x1000>;
+				status = "disabled";
+			};
+		};
+
 		intc: interrupt-controller@f200000 {
 			compatible = "arm,gic-v3";
 			reg = <0xf200000 0x10000>,     /* GICD */
