@@ -21,7 +21,7 @@
 		#size-cells = <2>;
 		ranges;
 
-		bootargs = "pmos.nosplash";
+		bootargs = "pmos.nosplash clk_ignore_unused pd_ignore_unused";
 
 		framebuffer0: framebuffer@5c000000 {
 			compatible = "simple-framebuffer";
